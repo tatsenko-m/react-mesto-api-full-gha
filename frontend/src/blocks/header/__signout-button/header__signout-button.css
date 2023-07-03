@@ -1,0 +1,24 @@
+.header__signout-button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  color: #A9A9A9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 1;
+  transition: opacity 1s;
+  margin: 0;
+  padding: 0;
+  align-self: flex-start;
+}
+
+.header__signout-button:hover {
+  opacity: 0.6;
+}
