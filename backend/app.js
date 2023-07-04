@@ -14,7 +14,7 @@ const { validateSignup, validateSignin } = require('./middlewares/validation');
 
 const app = express();
 
-app.use(cors({ credentials: true }));
+app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
