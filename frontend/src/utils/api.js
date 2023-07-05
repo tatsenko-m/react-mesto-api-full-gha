@@ -96,9 +96,9 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-62',
+  baseUrl: 'https://api.tatsenko-m.nomoreparties.sbs',
   headers: {
-    authorization: '35e162c1-4508-4f6a-859d-022fc5f0438b',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json'
   }
 });
