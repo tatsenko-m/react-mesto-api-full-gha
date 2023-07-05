@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.32.251
+IP 158.160.32.251
 
 Frontend https://tatsenko-m.nomoreparties.sbs
 
