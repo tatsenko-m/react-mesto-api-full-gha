@@ -3,7 +3,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
 const { login, createUser } = require('./controllers/users');
@@ -17,7 +16,6 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-app.use(cookieParser());
 
 mongoose.connect('mongodb://0.0.0.0:27017/mestodb', {
   useNewUrlParser: true,
