@@ -158,7 +158,7 @@ function App() {
       auth.getContent(token)
         .then((user) => {
           setLoggedIn(true);
-          setUserData({ email: user.data.email });
+          setUserData({ email: user.email });
           const url = location.state?.backUrl || '/';
           navigate(url);
         })
