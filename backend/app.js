@@ -13,6 +13,8 @@ const router = require('./routes/index');
 const { validateSignup, validateSignin } = require('./middlewares/validation');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
+const { PORT = 3000, DB_URL = 'mongodb://0.0.0.0:27017/mestodb' } = process.env;
+
 const app = express();
 
 const limiter = rateLimit({
@@ -26,7 +28,7 @@ app.use(limiter);
 app.use(express.json());
 app.use(requestLogger);
 
-mongoose.connect('mongodb://0.0.0.0:27017/mestodb', {
+mongoose.connect(DB_URL, {
   useNewUrlParser: true,
 });
 
@@ -44,7 +46,7 @@ app.use(auth);
 
 app.use(router);
 
-app.listen(3000);
+app.listen(PORT);
 
 app.use(errorLogger);
 
