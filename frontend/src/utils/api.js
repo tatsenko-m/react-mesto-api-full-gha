@@ -1,3 +1,5 @@
+import { createHeaders } from "./headers";
+
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
@@ -10,6 +12,10 @@ class Api {
     }
 
     return Promise.reject(`Ошибка: ${res.status}`);
+  }
+
+  setHeaders(headers) {
+    this._headers = headers;
   }
 
   getUserInfo() {
@@ -97,10 +103,7 @@ class Api {
 
 const api = new Api({
   baseUrl: 'https://api.tatsenko-m.nomoreparties.sbs',
-  headers: {
-    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-    'Content-Type': 'application/json'
-  }
+  headers: createHeaders()
 });
 
 export default api;

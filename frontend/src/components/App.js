@@ -14,6 +14,7 @@ import Register from './Register';
 import InfoTooltip from './InfoTooltip';
 import NotFound from './NotFound';
 import api from '../utils/api';
+import { createHeaders } from "../utils/headers";
 import * as auth from '../utils/auth';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
@@ -138,6 +139,7 @@ function App() {
     .then(data => {
       if (data.token) {
         localStorage.setItem('token', data.token);
+        api.setHeaders(createHeaders());
         setLoggedIn(true);
         setUserData({ email: email });
         const url = location.state?.backUrl || '/';
@@ -155,6 +157,7 @@ function App() {
   function handleTokenCheck() {
     const token = localStorage.getItem('token');
     if (token) {
+      api.setHeaders(createHeaders());
       auth.getContent(token)
         .then((user) => {
           setLoggedIn(true);
